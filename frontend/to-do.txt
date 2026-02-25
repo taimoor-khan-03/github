@@ -1,0 +1,16 @@
+step 1
+  yargs - to track and read files from command line 
+  console cmds:
+   init , add , push , commit pull , revert
+
+step 2
+  frontend Components:
+   Auth, dashboard, repository, issuse  
+
+step 3
+  DB schema and model:
+   user, repo and issuse 
+
+step 4 
+  API end-points
+   
