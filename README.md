@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="frontend/public/bnner.jpg" width="100%" />
+  <img src="frontend/public/bnner.png" width="100%" />
 </p>
 
 # Github
