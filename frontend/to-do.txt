@@ -1,7 +1,7 @@
 step 1
   yargs - to track and read files from command line 
   console cmds:
-   init , add , push , commit pull , revert
+   init , add , push , commit, pull , revert
 
 step 2
   frontend Components:
