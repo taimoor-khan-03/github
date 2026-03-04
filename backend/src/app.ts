@@ -1,7 +1,14 @@
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
+
+// Importing the controller functions for handling the commands   
 import { initRepo } from './controllers/init';    
 import { addRepo } from './controllers/add'; 
+import { commitRepo } from './controllers/commit';
+import { pullRepo } from './controllers/pull';
+import { pushRepo } from './controllers/push';     
+import { revertRepo } from './controllers/revert';
+
 
 
 yargs(hideBin(process.argv))
@@ -15,9 +22,22 @@ yargs(hideBin(process.argv))
             type: "string",   
          })
       },
-      addRepo
+      (argv) => addRepo({filePath: argv.file as string})
    )
-   .command("commit","Commit changes   ", {} , initRepo)
+   .command(
+      "commit <message>",
+      "Commit changes   ",
+      (yargs) => {
+         yargs.positional("message",{
+            description: "Commit message",
+            type: "string",
+         })
+      }, 
+      commitRepo  
+   )
+   .command("pull","Pull changes from remote repository", {} , pullRepo)   
+   .command("push","Push changes to remote repository", {} , pushRepo)   
+   .command("revert <commitID>","Revert changes in repository", {} , revertRepo)   
    .demandCommand(1,"Enter aleast one CMD:")
    .help()
    .parse()
